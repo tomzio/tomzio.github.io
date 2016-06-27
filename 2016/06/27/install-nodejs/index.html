@@ -6,16 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>NodeJs安装配置 | Tom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="web notes">
+  <meta name="description" content="使用nvm管理多个不同的NodeJs版本, 及版本快速切换
+安装nvm12$ git clone https://github.com/creationix/nvm.git ~/.nvm$ source ~/.nvm/nvm.sh
+使用查看已安装的版本：
+1$ nvm ls
+查看可以安装的版本：1$ nvm ls-remote
+安装指定的版本：1$ nvm install &amp;lt;version&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeJs安装配置">
 <meta property="og:url" content="http://tomzio.github.io/2016/06/27/install-nodejs/index.html">
 <meta property="og:site_name" content="Tom's Blog">
-<meta property="og:description" content="web notes">
-<meta property="og:updated_time" content="2016-06-27T06:13:29.528Z">
+<meta property="og:description" content="使用nvm管理多个不同的NodeJs版本, 及版本快速切换
+安装nvm12$ git clone https://github.com/creationix/nvm.git ~/.nvm$ source ~/.nvm/nvm.sh
+使用查看已安装的版本：
+1$ nvm ls
+查看可以安装的版本：1$ nvm ls-remote
+安装指定的版本：1$ nvm install &amp;lt;version&amp;">
+<meta property="og:updated_time" content="2016-06-27T08:36:36.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJs安装配置">
-<meta name="twitter:description" content="web notes">
+<meta name="twitter:description" content="使用nvm管理多个不同的NodeJs版本, 及版本快速切换
+安装nvm12$ git clone https://github.com/creationix/nvm.git ~/.nvm$ source ~/.nvm/nvm.sh
+使用查看已安装的版本：
+1$ nvm ls
+查看可以安装的版本：1$ nvm ls-remote
+安装指定的版本：1$ nvm install &amp;lt;version&amp;">
   
     <link rel="alternative" href="/atom.xml" title="Tom&#39;s Blog" type="application/atom+xml">
   
@@ -33,7 +48,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="null" class="js-avatar">
+			<img lazy-src="http://dns.tomz.cc/slide1.jpg!headimg" class="js-avatar">
 			
 		</a>
 
@@ -55,16 +70,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
 						
 					</div>
 					
@@ -75,10 +80,6 @@
 						<li>菜单</li>
 						<li>标签</li>
 						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -93,6 +94,8 @@
 						
 							<li><a href="/">主页</a></li>
 				        
+							<li><a href="/">前端开发</a></li>
+				        
 							<li><a href="/archives">所有文章</a></li>
 				        
 						</ul>
@@ -102,11 +105,11 @@
 							
 								<a class="github" target="_blank" href="#" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-					        
 								<a class="rss" target="_blank" href="#" title="rss">rss</a>
 					        
 								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="#" title="mail">mail</a>
 					        
 						</div>
 					</nav>
@@ -121,31 +124,7 @@
 				
 				
 				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
-				</section>
-				
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
-				</section>
 				
 			</div>
 		</div>
@@ -163,7 +142,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="null" class="js-avatar">
+				<img lazy-src="http://dns.tomz.cc/slide1.jpg!headimg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -175,6 +154,8 @@
 				
 					<li><a href="/">主页</a></li>
 		        
+					<li><a href="/">前端开发</a></li>
+		        
 					<li><a href="/archives">所有文章</a></li>
 		        
 		        <div class="clearfix"></div>
@@ -185,11 +166,11 @@
 					
 						<a class="github" target="_blank" href="#" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-			        
 						<a class="rss" target="_blank" href="#" title="rss">rss</a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="#" title="mail">mail</a>
 			        
 				</div>
 			</nav>
@@ -223,6 +204,10 @@
       <div class="article-info article-info-post">
         
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/nodejs/">nodejs</a><a class="article-category-link" href="/categories/nodejs/javascript/">javascript</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -230,7 +215,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>使用nvm管理多个不同的NodeJs版本, 及版本快速切换</p>
+<h3 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/creationix/nvm.git ~/.nvm</span><br><span class="line">$ <span class="built_in">source</span> ~/.nvm/nvm.sh</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>查看已安装的版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls</span><br></pre></td></tr></table></figure>
+<p>查看可以安装的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br></pre></td></tr></table></figure></p>
+<p>安装指定的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install &lt;version&gt;</span><br></pre></td></tr></table></figure></p>
+<p>指定的版本将会直接安装在 nvm 程序所在的目录下。<br>删除指定的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm uninstall &lt;version&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用选定的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm use &lt;version&gt;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
