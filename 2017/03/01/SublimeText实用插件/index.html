@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SublimeText,web," />
+  <meta name="keywords" content="web,SublimeText," />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Tom's Blog">
 <meta property="og:description" content="由于国内部分地区sublime.wbond.net域名被墙了，但通过ip可以访问先 Ping sublime.wbond.net 得到具体的IP地址
 1234567891011121314151617Microsoft Windows [版本 6.3.9600](c) 2013 Microsoft Corporation。保留所有权利。C:\Users\Administrator&amp;gt;ping">
-<meta property="og:updated_time" content="2017-05-23T10:46:52.163Z">
+<meta property="og:updated_time" content="2017-05-23T15:39:10.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SublimeText实用插件">
 <meta name="twitter:description" content="由于国内部分地区sublime.wbond.net域名被墙了，但通过ip可以访问先 Ping sublime.wbond.net 得到具体的IP地址
@@ -416,6 +416,12 @@
 </li>
 </ol>
 </blockquote>
+<p>做ReactJS开发最需要的无疑是这两条：语法高亮、代码提示，如果能够想Emmet那样自动扩展就更好了，这里我可以告诉你，确实可以实现。</p>
+<p>语法高亮<br>Babel-Sublime插件很好的支持了JSX语法的高亮显示，连包裹在组件中的HTML标签都能实现高亮显示，具体的插件安装以及设置方法就不多说了，自行看GitHub上的介绍吧，很简单。</p>
+<p>代码提示<br>Sublime-React插件严格的说并不是一个代码提示插件，而是一个类似于Emmet的自动扩展代码插件，只需要简单敲几个字母然后按下TAB键就能自动扩展成你想要的完整代码片段，效果如下图所示。</p>
+<p>//支持的代码片段如下<br>cdm→  componentDidMount: fn() { … }<br>cdup→  componentDidUpdate: fn(pp, ps) { … }<br>cs→  var cx = React.addons.classSet;<br>cwm→  componentWillMount: fn() { … }<br>cwr→  componentWillReceiveProps: fn(np) { … }<br>cwu→  componentWillUpdate: fn(np, ns) { … }<br>cwun→  componentWillUnmount: fn() { … }<br>cx→  cx({ … })<br>fdn→  React.findDOMNode(…)<br>fup→  forceUpdate(…)<br>gdp→  getDefaultProps: fn() { return {…} }<br>gis→  getInitialState: fn() { return {…} }<br>ism→  isMounted()<br>props→  this.props.<br>pt→  propTypes { … }<br>rcc→  component skeleton<br>refs→  this.refs.<br>ren→  render: fn() { return … }<br>scu→  shouldComponentUpdate: fn(np, ns) { … }<br>sst→  this.setState({ … })<br>state→  this.state.<br>JSX中使用Emmet<br>虽然上面这个插件可以实现JSX的代码扩展，但是在JSX中包裹的HTML却不能直接支持Emmet，需要通过安装其他插件以及修改相应设置来实现。<br>首先是安装需要的插件：RegReplace和Chain Of Command，直接在插件库中搜索安装即可。<br>接下来就是设置了，先在KeyBinding – Users中插入下面这段代码：</p>
+<p>  {<br>    “keys”: [“tab”],<br>    “command”: “expand_abbreviation_by_tab”,<br>    “context”: [{<br>        “operand”: “source.js”,<br>        “operator”: “equal”,<br>        “match_all”: true,<br>        “key”: “selector”<br>    },{<br>        “key”: “preceding_text”,<br>        “operator”: “regex_contains”,<br>        “operand”: “(\b(a\b|div|span|p\b|button)(\.\w<em>|&gt;\w</em>)?)”,<br>        “match_all”: true<br>    },{<br>        “key”: “selection_empty”,<br>        “operator”: “equal”,<br>        “operand”: true,<br>        “match_all”: true<br>    }]<br>  }<br>这样就实现了在JSX中按TAB键来扩展HTML片段了，但是JSX中的HTML和标准的HTML又有不同的地方，就是HTML中的class，在JSX中是className，所以这里就需要修改RegReplace的设置，找到Packagea Setting –&gt; Reg Replace –&gt; Settings-User，插入下面这段代码：</p>
+<p>{<br>    “replacements”: {<br>        “js_class”: {<br>            “find”: “ class=\””,<br>            “replace”: “ className=\””,<br>            “greedy”: true,<br>            “case”: false<br>        }<br>    }<br>}<br>这样就大功告成了，开始快乐的学习ReactJS吧~~！欢迎各位大神来补充。</p>
 
       
     </div>
@@ -439,9 +445,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SublimeText/" rel="tag"># SublimeText</a>
-          
             <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/SublimeText/" rel="tag"># SublimeText</a>
           
         </div>
       
@@ -459,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/Web设计的25年历史/" rel="prev" title="Web设计的25年历史">
+                Web设计的25年历史 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +536,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
