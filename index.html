@@ -259,6 +259,143 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.tomz.cc/2017/06/02/flex属性详解/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="tomz">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head01.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Tom's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Tom's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/02/flex属性详解/" itemprop="url">
+                  flex属性详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-02T11:47:13+08:00">
+                2017-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先明确一点是， flex 是 <code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code>的缩写。故其取值可以考虑以下情况：</p>
+<p>flex 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 flex 的默认值是 0 1 auto。同理，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2333 3222 234px;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2333;</span><br><span class="line">    flex-shrink: 3222;</span><br><span class="line">    flex-basis: 234px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为 none，则计算值为 0 0 auto，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: none;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 0;</span><br><span class="line">    flex-shrink: 0;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为 auto，则计算值为 1 1 auto，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: auto;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0%，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 1;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为一个长度或百分比，则视为 flex-basis 值，flex-grow 取 1，flex-shrink 取 1，有如下等同情况（注意 0% 是一个百分比而不是一个非负数字）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.item-1 &#123;flex: 0%;&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br><span class="line">.item-2 &#123;flex: 24px;&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 24px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为两个非负数字，则分别视为 flex-grow 和 flex-shrink 的值，flex-basis 取 0%，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2 3;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2;</span><br><span class="line">    flex-shrink: 3;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当 flex 取值为一个非负数字和一个长度或百分比，则分别视为 flex-grow 和 flex-basis 的值，flex-shrink 取 1，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2333 3222px;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2333;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 3222px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flex-basis 规定的是子元素的基准值。所以是否溢出的计算与此属性息息相关。flex-basis 规定的范围取决于 box-sizing。这里主要讨论以下 flex-basis 的取值情况：</p>
+<p>auto：首先检索该子元素的主尺寸，如果主尺寸不为 auto，则使用值采取主尺寸之值；如果也是 auto，则使用值为 content。<br>content：指根据该子元素的内容自动布局。有的用户代理没有实现取 content 值，等效的替代方案是 flex-basis 和主尺寸都取 auto。<br>百分比：根据其包含块（即伸缩父容器）的主尺寸计算。如果包含块的主尺寸未定义（即父容器的主尺寸取决于子元素），则计算结果和设为 auto 一样。<br>举一个不同的值之间的区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;item-1&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item-2&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item-3&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    .parent &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        width: 600px;</span><br><span class="line">    &#125;</span><br><span class="line">    .parent &gt; div &#123;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-1 &#123;</span><br><span class="line">        width: 140px;</span><br><span class="line">        flex: 2 1 0%;</span><br><span class="line">        background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-2 &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        flex: 2 1 auto;</span><br><span class="line">        background: darkblue;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-3 &#123;</span><br><span class="line">        flex: 1 1 200px;</span><br><span class="line">        background: lightblue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>主轴上父容器总尺寸为 600px<br>子元素的总基准值是：0% + auto + 200px = 300px，其中</p>
+<ul>
+<li>0% 即 0 宽度</li>
+<li>auto 对应取主尺寸即 100px<br>故剩余空间为 600px - 300px = 300px<br>伸缩放大系数之和为： 2 + 2 + 1 = 5<br>剩余空间分配如下：</li>
+<li>item-1 和 item-2 各分配 2/5，各得 120px</li>
+<li>item-3 分配 1/5，得 60px<br>各项目最终宽度为：</li>
+<li>item-1 = 0% + 120px = 120px</li>
+<li>item-2 = auto + 120px = 220px</li>
+<li>item-3 = 200px + 60px = 260px<br>当 item-1 基准值取 0% 的时候，是把该项目视为零尺寸的，故即便声明其尺寸为 140px，也并没有什么用，形同虚设<br>而 item-2 基准值取 auto 的时候，根据规则基准值使用值是主尺寸值即 100px，故这 100px 不会纳入剩余空间<br>更多资料可以参考：</li>
+</ul>
+<p><a href="http://www.w3.org/html/ig/zh/css-flex-1/" target="_blank" rel="external">http://www.w3.org/html/ig/zh/css-flex-1/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://blog.tomz.cc/2017/05/24/Web设计的25年历史/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -544,16 +681,16 @@
 </li>
 <li><p>PlainTasks<br>带上TODO的本文会被PlainTasks识别</p>
 </li>
-<li><p><a href="https://github.com/babel/babel-sublime" target="_blank" rel="external">Babel</a><br>Language definitions for ES6+ JavaScript with React JSX syntax extensions.</p>
+<li><p><a href="https://github.com/babel/babel-sublime" target="_blank" rel="external">Babel</a><br>做ReactJS开发最需要的无疑是这两条：语法高亮、代码提示，如果能够想Emmet那样自动扩展就更好了，这里我可以告诉你，确实可以实现。<br>Babel-Sublime插件很好的支持了JSX语法的高亮显示，连包裹在组件中的HTML标签都能实现高亮显示，具体的插件安装以及设置方法就不多说了，自行看GitHub上的介绍吧，很简单。</p>
+</li>
+<li><p>Sublime-React插件严格的说并不是一个代码提示插件，而是一个类似于Emmet的自动扩展代码插件，只需要简单敲几个字母然后按下TAB键就能自动扩展成你想要的完整代码片段，效果如下图所示。</p>
 </li>
 </ol>
 </blockquote>
-<p>做ReactJS开发最需要的无疑是这两条：语法高亮、代码提示，如果能够想Emmet那样自动扩展就更好了，这里我可以告诉你，确实可以实现。</p>
-<p>语法高亮<br>Babel-Sublime插件很好的支持了JSX语法的高亮显示，连包裹在组件中的HTML标签都能实现高亮显示，具体的插件安装以及设置方法就不多说了，自行看GitHub上的介绍吧，很简单。</p>
-<p>代码提示<br>Sublime-React插件严格的说并不是一个代码提示插件，而是一个类似于Emmet的自动扩展代码插件，只需要简单敲几个字母然后按下TAB键就能自动扩展成你想要的完整代码片段，效果如下图所示。</p>
-<p>//支持的代码片段如下<br>cdm→  componentDidMount: fn() { … }<br>cdup→  componentDidUpdate: fn(pp, ps) { … }<br>cs→  var cx = React.addons.classSet;<br>cwm→  componentWillMount: fn() { … }<br>cwr→  componentWillReceiveProps: fn(np) { … }<br>cwu→  componentWillUpdate: fn(np, ns) { … }<br>cwun→  componentWillUnmount: fn() { … }<br>cx→  cx({ … })<br>fdn→  React.findDOMNode(…)<br>fup→  forceUpdate(…)<br>gdp→  getDefaultProps: fn() { return {…} }<br>gis→  getInitialState: fn() { return {…} }<br>ism→  isMounted()<br>props→  this.props.<br>pt→  propTypes { … }<br>rcc→  component skeleton<br>refs→  this.refs.<br>ren→  render: fn() { return … }<br>scu→  shouldComponentUpdate: fn(np, ns) { … }<br>sst→  this.setState({ … })<br>state→  this.state.<br>JSX中使用Emmet<br>虽然上面这个插件可以实现JSX的代码扩展，但是在JSX中包裹的HTML却不能直接支持Emmet，需要通过安装其他插件以及修改相应设置来实现。<br>首先是安装需要的插件：RegReplace和Chain Of Command，直接在插件库中搜索安装即可。<br>接下来就是设置了，先在KeyBinding – Users中插入下面这段代码：</p>
-<p>  {<br>    “keys”: [“tab”],<br>    “command”: “expand_abbreviation_by_tab”,<br>    “context”: [{<br>        “operand”: “source.js”,<br>        “operator”: “equal”,<br>        “match_all”: true,<br>        “key”: “selector”<br>    },{<br>        “key”: “preceding_text”,<br>        “operator”: “regex_contains”,<br>        “operand”: “(\b(a\b|div|span|p\b|button)(\.\w<em>|&gt;\w</em>)?)”,<br>        “match_all”: true<br>    },{<br>        “key”: “selection_empty”,<br>        “operator”: “equal”,<br>        “operand”: true,<br>        “match_all”: true<br>    }]<br>  }<br>这样就实现了在JSX中按TAB键来扩展HTML片段了，但是JSX中的HTML和标准的HTML又有不同的地方，就是HTML中的class，在JSX中是className，所以这里就需要修改RegReplace的设置，找到Packagea Setting –&gt; Reg Replace –&gt; Settings-User，插入下面这段代码：</p>
-<p>{<br>    “replacements”: {<br>        “js_class”: {<br>            “find”: “ class=\””,<br>            “replace”: “ className=\””,<br>            “greedy”: true,<br>            “case”: false<br>        }<br>    }<br>}<br>这样就大功告成了，开始快乐的学习ReactJS吧~~！欢迎各位大神来补充。</p>
+<p>//支持的代码片段如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cdm→  componentDidMount: fn() &#123; ... &#125;</span><br><span class="line">cdup→  componentDidUpdate: fn(pp, ps) &#123; ... &#125;</span><br><span class="line">cs→  var cx = React.addons.classSet;</span><br><span class="line">cwm→  componentWillMount: fn() &#123; ... &#125;</span><br><span class="line">cwr→  componentWillReceiveProps: fn(np) &#123; ... &#125;</span><br><span class="line">cwu→  componentWillUpdate: fn(np, ns) &#123; ... &#125;</span><br><span class="line">cwun→  componentWillUnmount: fn() &#123; ... &#125;</span><br><span class="line">cx→  cx(&#123; ... &#125;)</span><br><span class="line">fdn→  React.findDOMNode(...)</span><br><span class="line">fup→  forceUpdate(...)</span><br><span class="line">gdp→  getDefaultProps: fn() &#123; return &#123;...&#125; &#125; </span><br><span class="line">gis→  getInitialState: fn() &#123; return &#123;...&#125; &#125; </span><br><span class="line">ism→  isMounted()</span><br><span class="line">props→  this.props.</span><br><span class="line">pt→  propTypes &#123; ... &#125;</span><br><span class="line">rcc→  component skeleton</span><br><span class="line">refs→  this.refs.</span><br><span class="line">ren→  render: fn() &#123; return ... &#125;</span><br><span class="line">scu→  shouldComponentUpdate: fn(np, ns) &#123; ... &#125;</span><br><span class="line">sst→  this.setState(&#123; ... &#125;)</span><br><span class="line">state→  this.state.</span><br></pre></td></tr></table></figure></p>
+<p>JSX中使用Emmet<br>虽然上面这个插件可以实现JSX的代码扩展，但是在JSX中包裹的HTML却不能直接支持Emmet，需要通过安装其他插件以及修改相应设置来实现。<br>首先是安装需要的插件：RegReplace和Chain Of Command，直接在插件库中搜索安装即可。<br>接下来就是设置了，先在KeyBinding – Users中插入下面这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;keys&quot;: [&quot;tab&quot;],</span><br><span class="line">  &quot;command&quot;: &quot;expand_abbreviation_by_tab&quot;, </span><br><span class="line">  &quot;context&quot;: [&#123;</span><br><span class="line">      &quot;operand&quot;: &quot;source.js&quot;, </span><br><span class="line">      &quot;operator&quot;: &quot;equal&quot;, </span><br><span class="line">      &quot;match_all&quot;: true, </span><br><span class="line">      &quot;key&quot;: &quot;selector&quot;</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">      &quot;key&quot;: &quot;preceding_text&quot;, </span><br><span class="line">      &quot;operator&quot;: &quot;regex_contains&quot;, </span><br><span class="line">      &quot;operand&quot;: &quot;(\\b(a\\b|div|span|p\\b|button)(\\.\\w*|&gt;\\w*)?)&quot;, </span><br><span class="line">      &quot;match_all&quot;: true</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">      &quot;key&quot;: &quot;selection_empty&quot;, </span><br><span class="line">      &quot;operator&quot;: &quot;equal&quot;, </span><br><span class="line">      &quot;operand&quot;: true, </span><br><span class="line">      &quot;match_all&quot;: true</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就实现了在JSX中按TAB键来扩展HTML片段了，但是JSX中的HTML和标准的HTML又有不同的地方，就是HTML中的class，在JSX中是className，所以这里就需要修改RegReplace的设置，找到Packagea Setting –&gt; Reg Replace –&gt; Settings-User，插入下面这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;replacements&quot;: &#123;</span><br><span class="line">        &quot;js_class&quot;: &#123;</span><br><span class="line">            &quot;find&quot;: &quot; class=\&quot;&quot;,</span><br><span class="line">            &quot;replace&quot;: &quot; className=\&quot;&quot;,</span><br><span class="line">            &quot;greedy&quot;: true,</span><br><span class="line">            &quot;case&quot;: false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就大功告成了，开始快乐的学习ReactJS吧~~！欢迎各位大神来补充。</p>
 
           
         
@@ -1623,164 +1760,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.tomz.cc/2016/07/19/Lazy-loading-webfont/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="tomz">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/head01.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Tom's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Tom's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/19/Lazy-loading-webfont/" itemprop="url">
-                  CSS字体异步加载
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-19T12:42:12+08:00">
-                2016-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">技术笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。</p>
-<p>触发异步样式下载的诀窍是使用一个 <link> 元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。</p>
-<h3 id="加载Google字体-需翻墙"><a href="#加载Google字体-需翻墙" class="headerlink" title="加载Google字体(需翻墙)"></a>加载Google字体(需翻墙)</h3><p>这里我用 Kalam字体举例，引入字体</p>
-<p><code>HTML</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&apos;https://fonts.googleapis.com/css?family=Kalam:300,700&apos; rel=&apos;stylesheet&apos; media=&quot;none&quot; onload=&quot;if(media!=&apos;all&apos;)media=&apos;all&apos;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>CSS代码如下:</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: Kalam, &apos;Lucida Handwriting&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>在说这个例子之前我要说一下</p>
-<blockquote>
-<ul>
-<li>在CSS匹配字体的方式是从左往右进行匹配的，就用上面的CSS代码来说，CSS优先匹配Kalam字体，</li>
-<li>但由于系统和页面缓存中都没有这个字体，于是开始匹配下一个字体Lucida Handwriting，</li>
-<li>当Kalam字体下载完成后，CSS将重新上面的过程从左往右匹配Kalam字体</li>
-</ul>
-</blockquote>
-<p>字体在下载过程中,由于设置了<code>media=&quot;none&quot;</code>,暂时先不启用直到字体加载完后再将字体应用到所有(media的属性值可参考<a href="http://www.w3school.com.cn/tags/att_link_media.asp" target="_blank" rel="external">w3school</a>), 但是有一个问题由于字体加载速度的问题．总是会出现在重新匹配该字体过程中出现空白，具体原因不太清楚.</p>
-<p>效果如下，</p>
-<p><img src="http://cdn.tomz.cc/blog/load-google-font.gif" alt="img2"></p>
-<p><img src="http://cdn.tomz.cc/blog/load-google-font1.gif" alt="img2"></p>
-<h3 id="使用360的CDN镜像加载Google字体"><a href="#使用360的CDN镜像加载Google字体" class="headerlink" title="使用360的CDN镜像加载Google字体"></a>使用360的CDN镜像加载Google字体</h3><p>关于上面的问题，猜测可能是由于网络原因导致</p>
-<p>由于国内无法访问Google, 可以使用360的cdn镜像访问, 将<code>https://fonts.googleapis.com</code>替换成<code>http://fonts.useso.com</code><br>替换后字体加载后,将重新从左往右至第一个匹配的字体, 在字体重新回退匹配的过程中没有出现文本空白的情况.</p>
-<p>效果如下图:</p>
-<p><img src="http://cdn.tomz.cc/blog/load-google-font2.gif" alt="img3"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1819,7 +1805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="github,ssh," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,22 +84,15 @@
 
 
 
-<meta name="description" content="1. 如果没有安装ssh，那么使用下面的指令sudo apt-get install ssh
-2 检查SSH公钥cd ~/.ssh看看存不存在.ssh，如果存在的话，掠过下一步；不存在的请看下一步
-3 生成SSH公钥123$ ssh-keygen -t rsa -C &amp;quot;your_email@youremail.com&amp;quot;# Creates a new ssh key using">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Github生成SSH公钥">
-<meta property="og:url" content="http://blog.tomz.cc/2016/11/28/生成github公钥/index.html">
+<meta name="description" content="web notes">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tom's Blog">
+<meta property="og:url" content="http://blog.tomz.cc/page/2/index.html">
 <meta property="og:site_name" content="Tom's Blog">
-<meta property="og:description" content="1. 如果没有安装ssh，那么使用下面的指令sudo apt-get install ssh
-2 检查SSH公钥cd ~/.ssh看看存不存在.ssh，如果存在的话，掠过下一步；不存在的请看下一步
-3 生成SSH公钥123$ ssh-keygen -t rsa -C &amp;quot;your_email@youremail.com&amp;quot;# Creates a new ssh key using">
-<meta property="og:updated_time" content="2016-11-29T06:52:03.078Z">
+<meta property="og:description" content="web notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github生成SSH公钥">
-<meta name="twitter:description" content="1. 如果没有安装ssh，那么使用下面的指令sudo apt-get install ssh
-2 检查SSH公钥cd ~/.ssh看看存不存在.ssh，如果存在的话，掠过下一步；不存在的请看下一步
-3 生成SSH公钥123$ ssh-keygen -t rsa -C &amp;quot;your_email@youremail.com&amp;quot;# Creates a new ssh key using">
+<meta name="twitter:title" content="Tom's Blog">
+<meta name="twitter:description" content="web notes">
 
 
 
@@ -127,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.tomz.cc/2016/11/28/生成github公钥/"/>
+  <link rel="canonical" href="http://blog.tomz.cc/page/2/"/>
 
 
 
 
 
-  <title> Github生成SSH公钥 | Tom's Blog </title>
+  <title> Tom's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +147,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -264,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.tomz.cc/2016/11/28/生成github公钥/">
+  <link itemprop="mainEntityOfPage" href="http://blog.tomz.cc/2016/07/19/Lazy-loading-webfont/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="tomz">
@@ -288,7 +283,10 @@
             
             
               
-                Github生成SSH公钥
+                
+                <a class="post-title-link" href="/2016/07/19/Lazy-loading-webfont/" itemprop="url">
+                  CSS字体异步加载
+                </a>
               
             
           </h1>
@@ -301,8 +299,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-28T22:49:33+08:00">
-                2016-11-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-19T12:42:12+08:00">
+                2016-07-19
               </time>
             
 
@@ -320,8 +318,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开发工具与环境/" itemprop="url" rel="index">
-                    <span itemprop="name">开发工具与环境</span>
+                  <a href="/categories/技术笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术笔记</span>
                   </a>
                 </span>
 
@@ -355,81 +353,65 @@
       
 
       
-        <h3 id="1-如果没有安装ssh，那么使用下面的指令"><a href="#1-如果没有安装ssh，那么使用下面的指令" class="headerlink" title="1. 如果没有安装ssh，那么使用下面的指令"></a>1. 如果没有安装ssh，那么使用下面的指令</h3><p><code>sudo apt-get install ssh</code></p>
-<h3 id="2-检查SSH公钥"><a href="#2-检查SSH公钥" class="headerlink" title="2 检查SSH公钥"></a>2 检查SSH公钥</h3><p><code>cd ~/.ssh</code><br>看看存不存在.ssh，如果存在的话，掠过下一步；不存在的请看下一步</p>
-<h3 id="3-生成SSH公钥"><a href="#3-生成SSH公钥" class="headerlink" title="3 生成SSH公钥"></a>3 生成SSH公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/home/you/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-<p>现在你可以看到，在自己的目录下，有一个.ssh目录，说明成功了</p>
-<a id="more"></a>
-<h3 id="3-1-输入github密码"><a href="#3-1-输入github密码" class="headerlink" title="3.1 输入github密码"></a>3.1 输入github密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
-<p>这个时候输入你在github上设置的密码。</p>
-<h3 id="3-2-然后在-ssh中可以看到"><a href="#3-2-然后在-ssh中可以看到" class="headerlink" title="3.2 然后在.ssh中可以看到"></a>3.2 然后在.ssh中可以看到</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /home/you/.ssh/id_rsa.</span><br><span class="line"># Your public key has been saved in /home/you/.ssh/id_rsa.pub.</span><br><span class="line"># The key fingerprint is:</span><br><span class="line"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@youremail.com</span><br></pre></td></tr></table></figure>
-<p>##4 添加SSH公钥到github<br>打开github，找到账户里面添加SSH，把idrsa.pub内容复制到key里面。</p>
-<h3 id="5-测试是否生效"><a href="#5-测试是否生效" class="headerlink" title="5 测试是否生效"></a>5 测试是否生效</h3><p>使用下面的命令测试<br><code>ssh -T git@github.com</code></p>
-<p>当你看到这些内容放入时候，直接yes<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
-<p>看到这个内容放入时候，说明就成功了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi username!</span><br><span class="line">You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+        
+          
+            <p>本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。</p>
+<p>触发异步样式下载的诀窍是使用一个 <link> 元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。</p>
+<h3 id="加载Google字体-需翻墙"><a href="#加载Google字体-需翻墙" class="headerlink" title="加载Google字体(需翻墙)"></a>加载Google字体(需翻墙)</h3><p>这里我用 Kalam字体举例，引入字体</p>
+<p><code>HTML</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&apos;https://fonts.googleapis.com/css?family=Kalam:300,700&apos; rel=&apos;stylesheet&apos; media=&quot;none&quot; onload=&quot;if(media!=&apos;all&apos;)media=&apos;all&apos;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>CSS代码如下:</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: Kalam, &apos;Lucida Handwriting&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>在说这个例子之前我要说一下</p>
+<blockquote>
+<ul>
+<li>在CSS匹配字体的方式是从左往右进行匹配的，就用上面的CSS代码来说，CSS优先匹配Kalam字体，</li>
+<li>但由于系统和页面缓存中都没有这个字体，于是开始匹配下一个字体Lucida Handwriting，</li>
+<li>当Kalam字体下载完成后，CSS将重新上面的过程从左往右匹配Kalam字体</li>
+</ul>
+</blockquote>
+<p>字体在下载过程中,由于设置了<code>media=&quot;none&quot;</code>,暂时先不启用直到字体加载完后再将字体应用到所有(media的属性值可参考<a href="http://www.w3school.com.cn/tags/att_link_media.asp" target="_blank" rel="external">w3school</a>), 但是有一个问题由于字体加载速度的问题．总是会出现在重新匹配该字体过程中出现空白，具体原因不太清楚.</p>
+<p>效果如下，</p>
+<p><img src="http://cdn.tomz.cc/blog/load-google-font.gif" alt="img2"></p>
+<p><img src="http://cdn.tomz.cc/blog/load-google-font1.gif" alt="img2"></p>
+<h3 id="使用360的CDN镜像加载Google字体"><a href="#使用360的CDN镜像加载Google字体" class="headerlink" title="使用360的CDN镜像加载Google字体"></a>使用360的CDN镜像加载Google字体</h3><p>关于上面的问题，猜测可能是由于网络原因导致</p>
+<p>由于国内无法访问Google, 可以使用360的cdn镜像访问, 将<code>https://fonts.googleapis.com</code>替换成<code>http://fonts.useso.com</code><br>替换后字体加载后,将重新从左往右至第一个匹配的字体, 在字体重新回退匹配的过程中没有出现文本空白的情况.</p>
+<p>效果如下图:</p>
+<p><img src="http://cdn.tomz.cc/blog/load-google-font2.gif" alt="img3"></p>
 
+          
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/ssh/" rel="tag"># ssh</a>
-          
-        </div>
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/11/27/atom工具进行前端开发/" rel="next" title="使用Atom进行前端开发">
-                <i class="fa fa-chevron-left"></i> 使用Atom进行前端开发
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/29/install-nodejs/" rel="prev" title="NodeJs安装配置">
-                NodeJs安装配置 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -437,10 +419,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -460,17 +438,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head01.jpg"
@@ -523,22 +492,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-如果没有安装ssh，那么使用下面的指令"><span class="nav-number">1.</span> <span class="nav-text">1. 如果没有安装ssh，那么使用下面的指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-检查SSH公钥"><span class="nav-number">2.</span> <span class="nav-text">2 检查SSH公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-生成SSH公钥"><span class="nav-number">3.</span> <span class="nav-text">3 生成SSH公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-输入github密码"><span class="nav-number">4.</span> <span class="nav-text">3.1 输入github密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-然后在-ssh中可以看到"><span class="nav-number">5.</span> <span class="nav-text">3.2 然后在.ssh中可以看到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-测试是否生效"><span class="nav-number">6.</span> <span class="nav-text">5 测试是否生效</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
@@ -644,10 +597,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 
