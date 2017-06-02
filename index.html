@@ -336,30 +336,16 @@
 
       
         
-          
-            <p>首先明确一点是， flex 是 <code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code>的缩写。故其取值可以考虑以下情况：</p>
+          <p>首先明确一点是， flex 是 <code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code>的缩写。故其取值可以考虑以下情况：</p>
 <p>flex 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 flex 的默认值是 0 1 auto。同理，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2333 3222 234px;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2333;</span><br><span class="line">    flex-shrink: 3222;</span><br><span class="line">    flex-basis: 234px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当 flex 取值为 none，则计算值为 0 0 auto，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: none;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 0;</span><br><span class="line">    flex-shrink: 0;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 flex 取值为 auto，则计算值为 1 1 auto，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: auto;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 flex 取值为一个非负数字，则该数字为 flex-grow 值，flex-shrink 取 1，flex-basis 取 0%，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 1;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 flex 取值为一个长度或百分比，则视为 flex-basis 值，flex-grow 取 1，flex-shrink 取 1，有如下等同情况（注意 0% 是一个百分比而不是一个非负数字）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.item-1 &#123;flex: 0%;&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br><span class="line">.item-2 &#123;flex: 24px;&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 24px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 flex 取值为两个非负数字，则分别视为 flex-grow 和 flex-shrink 的值，flex-basis 取 0%，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2 3;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2;</span><br><span class="line">    flex-shrink: 3;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 flex 取值为一个非负数字和一个长度或百分比，则分别视为 flex-grow 和 flex-basis 的值，flex-shrink 取 1，如下是等同的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;flex: 2333 3222px;&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    flex-grow: 2333;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 3222px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>flex-basis 规定的是子元素的基准值。所以是否溢出的计算与此属性息息相关。flex-basis 规定的范围取决于 box-sizing。这里主要讨论以下 flex-basis 的取值情况：</p>
-<p>auto：首先检索该子元素的主尺寸，如果主尺寸不为 auto，则使用值采取主尺寸之值；如果也是 auto，则使用值为 content。<br>content：指根据该子元素的内容自动布局。有的用户代理没有实现取 content 值，等效的替代方案是 flex-basis 和主尺寸都取 auto。<br>百分比：根据其包含块（即伸缩父容器）的主尺寸计算。如果包含块的主尺寸未定义（即父容器的主尺寸取决于子元素），则计算结果和设为 auto 一样。<br>举一个不同的值之间的区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;item-1&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item-2&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;item-3&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    .parent &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        width: 600px;</span><br><span class="line">    &#125;</span><br><span class="line">    .parent &gt; div &#123;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-1 &#123;</span><br><span class="line">        width: 140px;</span><br><span class="line">        flex: 2 1 0%;</span><br><span class="line">        background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-2 &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        flex: 2 1 auto;</span><br><span class="line">        background: darkblue;</span><br><span class="line">    &#125;</span><br><span class="line">    .item-3 &#123;</span><br><span class="line">        flex: 1 1 200px;</span><br><span class="line">        background: lightblue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>主轴上父容器总尺寸为 600px<br>子元素的总基准值是：0% + auto + 200px = 300px，其中</p>
-<ul>
-<li>0% 即 0 宽度</li>
-<li>auto 对应取主尺寸即 100px<br>故剩余空间为 600px - 300px = 300px<br>伸缩放大系数之和为： 2 + 2 + 1 = 5<br>剩余空间分配如下：</li>
-<li>item-1 和 item-2 各分配 2/5，各得 120px</li>
-<li>item-3 分配 1/5，得 60px<br>各项目最终宽度为：</li>
-<li>item-1 = 0% + 120px = 120px</li>
-<li>item-2 = auto + 120px = 220px</li>
-<li>item-3 = 200px + 60px = 260px<br>当 item-1 基准值取 0% 的时候，是把该项目视为零尺寸的，故即便声明其尺寸为 140px，也并没有什么用，形同虚设<br>而 item-2 基准值取 auto 的时候，根据规则基准值使用值是主尺寸值即 100px，故这 100px 不会纳入剩余空间<br>更多资料可以参考：</li>
-</ul>
-<p><a href="http://www.w3.org/html/ig/zh/css-flex-1/" target="_blank" rel="external">http://www.w3.org/html/ig/zh/css-flex-1/</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/02/flex属性详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -473,22 +459,15 @@
 
       
         
-          
-            <p>Web设计25年的历史，可以用以下9个GIF动画来总结。</p>
+          <p>Web设计25年的历史，可以用以下9个GIF动画来总结。</p>
 <p>Froont，一家为web设计师制作工具的旧金山公司，用9个GIF格式动画来表现网页设计在过去25年的发展历程。如果你想知道为什么CSS这么重要，为什么Flash会逐渐淘汰，这些动画图或许能让你一窥究竟。</p>
-<p>网页设计的单色时代，约1989年。想想Lynx和其他以Unix为基础的web浏览器，这些浏览器只会通过网络从这个终端到另一个终端一个字一个字地蹦出来。没有图形用户界面，只有一串字母和一个闪烁的光标。</p>
-<p>现代化的开始，约1995年。第一个浏览器，例如Mosaic，允许设计人员在网站上显示图片，但是唯一的方法是将这些网页元素丢进不雅的表格布局中。由于这真的很难精确定位，所以设计师得琢磨地非常清楚如何写好表格嵌套表格再嵌套表格的代码以便正确显示内容。</p>
-<p>幸运的是，JavaScript出现了，为设计师提供了很大的便捷。Flash让我们创建动态网站的设计更为简便：例如，弹出窗口和在页面上动态修改内容顺序。但是相较于本地HTML，JavaScript速度很慢。</p>
-<p>尽管Flash也曾风靡一时，但是现在几乎已经被HTML5干掉了，但是在1996年，它代表了网页设计的一个新高度：能够让设计师按他们自己的方式使得页面生动起来。这也是Froont飞出页面和开场动画等的黄金时代。但是，Flash会占用计算机大量的处理资源，这也使得它成为一种特别不友好的技术，尤其是对于移动设备例如笔记本电脑和智能手机而言。</p>
-<p>CSS，首次发布于1998年，解决了很多早期的web设计问题。通过将网站美观度从网页内容中剥离出来，设计师终于可以按照自己的想法制作或者为客户定制网页了。虽然最早的CSS版本不是非常灵活，但是现在的CSS已然成为了设计师需要掌握的最重要的网络技术。</p>
-<p>2007年iPhone的问世给设计人员带来了一个全新的难题：如何在智能手机这个更小的屏幕上设计网页？一开始设计人员想到的是使用一种网格系统，这种网格系统可以根据设备屏幕的尺寸将网页分割成若干列。</p>
-<p>2010年，对于如何在移动设备显示网页的问题，Ethan Marcotte想到了另一种解决方案：响应式设计。</p>
-<p>在响应性设计之后，一种撇去华丽效果重视内容的扁平化设计也出来了。这种设计简化了视觉元素，通过突出漂亮的字体来创建web体验，而且显示在任何设备上的效果都非常棒。</p>
-<p>至于未来会如何？Froont表示，更好的web设计还在研究开发中。以后，设计人员将不需要再担心浏览器的兼容性问题，各种适用于任何设备的工具也都随手可得。以后的技术将不会再成为设计的限制，设计师可以集中精力解决UI和UX问题，而不是把时间浪费在排除故障上。</p>
-<p>如果你喜欢这些动画，欢迎为我点赞。</p>
-<p>译文链接：<a href="http://www.codeceo.com/article/9-gif-web-design-history.html" target="_blank" rel="external">http://www.codeceo.com/article/9-gif-web-design-history.html</a><br>英文原文：The History Of Web Design Explained In 9 GIFs<br>翻译作者：码农网 – 小峰</p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/24/Web设计的25年历史/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
