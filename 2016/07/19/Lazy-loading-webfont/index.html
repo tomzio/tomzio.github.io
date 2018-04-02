@@ -84,25 +84,21 @@
 
 
 
-<meta name="description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。
-触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。
-加载G">
+<meta name="description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。 触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。 加载G">
+<meta name="keywords" content="web,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS字体异步加载">
 <meta property="og:url" content="http://blog.tomz.cc/2016/07/19/Lazy-loading-webfont/index.html">
-<meta property="og:site_name" content="Tom's Blog">
-<meta property="og:description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。
-触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。
-加载G">
+<meta property="og:site_name" content="Tom&#39;s Blog">
+<meta property="og:description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。 触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。 加载G">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://cdn.tomz.cc/blog/load-google-font.gif">
 <meta property="og:image" content="http://cdn.tomz.cc/blog/load-google-font1.gif">
 <meta property="og:image" content="http://cdn.tomz.cc/blog/load-google-font2.gif">
 <meta property="og:updated_time" content="2016-11-29T06:59:04.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS字体异步加载">
-<meta name="twitter:description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。
-触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。
-加载G">
+<meta name="twitter:description" content="本文展示了一种技术，它能通过异步下载样式表，以阻止它们的下载阻塞页面的渲染，从而尽可能快的让访问者获取到信息内容。 触发异步样式下载的诀窍是使用一个  元素，并 为media 属性设置一个不可用的值 (我用的是 media=”none”, 不过其它的任何值也是可以的)。当一个媒体查询的结果值计算出来是 false 的时候，浏览器仍然会下载样式表，但是不会在渲染页面之前等待样式表的资源可用。 加载G">
 <meta name="twitter:image" content="http://cdn.tomz.cc/blog/load-google-font.gif">
 
 
@@ -372,7 +368,7 @@
 <li>当Kalam字体下载完成后，CSS将重新上面的过程从左往右匹配Kalam字体</li>
 </ul>
 </blockquote>
-<p>字体在下载过程中,由于设置了<code>media=&quot;none&quot;</code>,暂时先不启用直到字体加载完后再将字体应用到所有(media的属性值可参考<a href="http://www.w3school.com.cn/tags/att_link_media.asp" target="_blank" rel="external">w3school</a>), 但是有一个问题由于字体加载速度的问题．总是会出现在重新匹配该字体过程中出现空白，具体原因不太清楚.</p>
+<p>字体在下载过程中,由于设置了<code>media=&quot;none&quot;</code>,暂时先不启用直到字体加载完后再将字体应用到所有(media的属性值可参考<a href="http://www.w3school.com.cn/tags/att_link_media.asp" target="_blank" rel="noopener">w3school</a>), 但是有一个问题由于字体加载速度的问题．总是会出现在重新匹配该字体过程中出现空白，具体原因不太清楚.</p>
 <p>效果如下，</p>
 <p><img src="http://cdn.tomz.cc/blog/load-google-font.gif" alt="img2"></p>
 <p><img src="http://cdn.tomz.cc/blog/load-google-font1.gif" alt="img2"></p>
